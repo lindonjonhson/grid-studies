@@ -1,0 +1,26 @@
+.photo-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /*Setting the row size*/
+    grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px){
+    
+    /*Creating a class to identify tall pictures*/
+    .card-tall{
+        /*Setting the grid row property to span 2 / auto allows the object to use 2 to infinite rows
+        In case of need we can remove the 'span' and use the line/row numbers explicitly
+        the span means, 'were it started'*/
+        grid-row: span 2 / auto;
+    }
+
+
+    .card-wide{
+        /*
+        To make the divs wider is the same thing, but instead of using 'grid-row', we use 'grid-column'
+        */
+        grid-column: span 2 / auto;
+    }
+}

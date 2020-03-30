@@ -1,0 +1,24 @@
+.basic-grid{
+    display: grid;
+    gap: 1rem;
+    /*
+    We could have used this, but there is a smarter way
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    This is better written, but too small
+    grid-template-columns: repeat(12, 1fr);
+
+    Good size, but overflows
+    grid-template-columns: repeat(12, minmax(240px, 1fr));
+
+    Implicit Grid
+    Tell grid to calculate the number of rows and columns on the fly,
+    respecting the rules set in the minmax 
+    */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    /*
+    We could use auto-fill as well, but auto-fit will expand its children to cover all the space
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    */
+}
